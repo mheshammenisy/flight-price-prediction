@@ -1,26 +1,61 @@
-# Flight Price Prediction
+# ✈️ Flight Price Prediction
 
-End-to-end machine learning project to predict airline ticket prices.
+End-to-end data science project to predict airline ticket prices using machine learning.
 
-## Project Overview
-- Performed full EDA and data cleaning
-- Engineered time-based and categorical features
-- Trained multiple regression models
-- Selected best model (Random Forest)
-- Deployed model using Streamlit
+Overview
 
-## Tech Stack
-- Python
-- Pandas, NumPy
-- Scikit-learn
-- Streamlit
+Performed full EDA, data cleaning, and business analysis
 
-## Model
-- Target: Flight Price (log-transformed)
-- Best Model: Random Forest Regressor
-- Metric: RMSE, R²
+Prepared data for a regression task
 
-## How to Run Locally
-```bash
+Trained and evaluated multiple machine learning models
+
+Deployed the final model using Streamlit Cloud
+
+# 1. Exploratory Data Analysis (EDA)
+
+Univariate analysis: distributions of numerical and categorical features
+
+Bivariate / multivariate analysis: relationships between features and price
+
+Data cleaning: fixed formats and removed irrelevant columns
+
+Business questions: answered using numerical analysis and visualizations
+(e.g. impact of airline, number of stops, and duration on price)
+
+# 2. Data Preparation
+
+Handled missing values and outliers
+
+Feature engineering: date, time, and duration features
+
+Encoded categorical variables
+
+Applied scaling and log transformation where needed
+
+# 3. Machine Learning
+
+Task: Regression
+
+Models tried: Linear Regression, Decision Tree, Random Forest
+
+Best model: Random Forest Regressor
+
+Evaluation metrics: RMSE, R²
+
+# 4. Deployment
+
+Model deployed using Streamlit Cloud
+
+Users can input flight details and receive predicted prices
+
+# 🔗 Live App:
+https://alx-systemengineering-devops-yq2ueq2wdyatyeoazbbcuw.streamlit.app/
+
+# Tech Stack
+
+Python, Pandas, NumPy, Scikit-learn, Matplotlib, Streamlit
+
+Run Locally
 pip install -r requirements.txt
-streamlit run app.py
+streamlit run src/app.py

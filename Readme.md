@@ -1,61 +1,101 @@
-# ✈️ Flight Price Prediction
+# ✈️ Flight Price Prediction – Machine Learning Project
 
-End-to-end data science project to predict airline ticket prices using machine learning.
+Streamlit App | Python 3.10 | Scikit-learn | Random Forest
 
-Overview
+An end-to-end machine learning project that predicts domestic flight prices in India using historical flight data.
+The project covers EDA, data cleaning, feature engineering, model training, evaluation, and deployment on Streamlit Cloud.
 
-Performed full EDA, data cleaning, and business analysis
+# 📊 Model Performance
+Model	R² (Test)	MAE (₹)	RMSE (₹)
+Random Forest	0.88	~884	~1826
+Gradient Boosting	0.83	~1399	~2327
+Ridge Regression	0.75	~1732	~2756
+Linear Regression	0.75	~1732	~2758
 
-Prepared data for a regression task
+# Best Model: Random Forest Regressor
 
-Trained and evaluated multiple machine learning models
+# 🔍 Key Insights (from EDA)
 
-Deployed the final model using Streamlit Cloud
+Airline type has a strong influence on ticket price
 
-# 1. Exploratory Data Analysis (EDA)
+Flights with more stops tend to be more expensive
 
-Univariate analysis: distributions of numerical and categorical features
+Early-morning and late-night flights are generally cheaper
 
-Bivariate / multivariate analysis: relationships between features and price
+Travel month and weekday affect pricing patterns
 
-Data cleaning: fixed formats and removed irrelevant columns
+# 🧠 Feature Engineering
 
-Business questions: answered using numerical analysis and visualizations
-(e.g. impact of airline, number of stops, and duration on price)
+Duration: "2h 50m" → 170 minutes
 
-# 2. Data Preparation
+Stops: "non-stop" → 0, "1 stop" → 1
 
-Handled missing values and outliers
+Date: extracted day, month, weekday
 
-Feature engineering: date, time, and duration features
+Time: extracted departure hour and arrival hour
 
-Encoded categorical variables
+# ⚙️ Machine Learning Pipeline
 
-Applied scaling and log transformation where needed
+The project uses a single Scikit-learn Pipeline:
 
-# 3. Machine Learning
+Pipeline(
+  preprocessing (ColumnTransformer)
+  → model (RandomForestRegressor)
+)
 
-Task: Regression
 
-Models tried: Linear Regression, Decision Tree, Random Forest
+This ensures:
 
-Best model: Random Forest Regressor
+No data leakage
 
-Evaluation metrics: RMSE, R²
+Safe serialization
 
-# 4. Deployment
+Easy deployment
 
-Model deployed using Streamlit Cloud
+# 🧪 Models Evaluated
 
-Users can input flight details and receive predicted prices
+Linear Regression
 
-# 🔗 Live App:
+Ridge Regression
+
+Gradient Boosting Regressor
+
+Random Forest Regressor ✅ (selected)
+
+# 🚀 Live Demo
+
+🔗 Streamlit App: 
 https://alx-systemengineering-devops-yq2ueq2wdyatyeoazbbcuw.streamlit.app/
 
-# Tech Stack
+🗂️ Project Structure
+flight_price_prediction/
+├── src/
+│   ├── datapipeline.py
+│   ├── model.py
+│   ├── train.py
+│   ├── app.py
+│   └── __init__.py
+├── models/
+│   └── flight_price_model.pkl
+├── 01_eda.ipynb
+├── requirements.txt
+├── README.md
+├── LICENSE
+└── .gitignore
 
-Python, Pandas, NumPy, Scikit-learn, Matplotlib, Streamlit
-
-Run Locally
+# 🛠️ How to Run Locally
+git clone https://github.com/mheshammenisy/flight-price-prediction.git
+cd flight-price-prediction
+python -m venv venv
+venv\Scripts\activate
 pip install -r requirements.txt
 streamlit run src/app.py
+
+# 👤 Author
+
+Mohamed Hesham Sayed
+Master’s Student – Energy & Data Analysis
+
+📝 License
+
+This project is licensed under the MIT License.
